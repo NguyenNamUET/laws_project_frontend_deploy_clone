@@ -6,9 +6,7 @@
       v-for="law in laws"
     >
       <el-col :span="16" style="width: 400px;">
-        <nuxt-link :to="{name: law_detail}">
-          {{law.name}}
-        </nuxt-link>
+        <nuxt-link v-for="law in laws" v-bind:to="'/laws/' + law.id"><div>{{law.name}}</div></nuxt-link>
       </el-col>
       <el-col :span="4" style="width: 200px; float:right">
         Ban hành: {{law.issued_date}}
@@ -22,7 +20,6 @@
     <el-row
       :gutter="20"
       style="box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04); margin-top: 6px;"
-      v-for="law in laws"
     >
       <el-col>
         <span>Từ khóa liên quan: Quyết định, Bộ giáo dục và Đào tạo</span>
