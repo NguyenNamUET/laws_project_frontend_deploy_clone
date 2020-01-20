@@ -14,7 +14,7 @@
 
 <script>
   export default {
-    name : "ExprireList",
+    name : "ExpireList",
     data(){
       return{
         new_document:[

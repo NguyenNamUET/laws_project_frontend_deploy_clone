@@ -1,4 +1,5 @@
 <template>
+<!--  #fbfbfb-->
   <div id=defaultLayout>
     <el-row style="background-color: #fbfbfb;">
       <el-col :span="16" :offset="4" class="_document_section">
@@ -16,8 +17,8 @@
               <el-menu-item index="2-3">Log out</el-menu-item>
             </el-submenu>
             <el-menu-item index="3" style="float:right"><span>Soạn thảo</span></el-menu-item>
-            <el-menu-item index="4" style="float:right"><span>Tìm kiếm</span></el-menu-item>
-            <el-menu-item index="5" style="float:right"><span>Trang chủ</span></el-menu-item>
+            <el-menu-item index="4" style="float:right"><span><nuxt-link to="/laws">Tìm kiếm</nuxt-link></span></el-menu-item>
+            <el-menu-item index="5" style="float:right"><span><nuxt-link to="/">Trang chủ</nuxt-link></span></el-menu-item>
           </el-menu>
       </el-col>
     </el-row>

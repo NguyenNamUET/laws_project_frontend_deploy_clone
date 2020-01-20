@@ -10,9 +10,9 @@
 </template>
 
 <script>
-  import HeaderDescription from "../components/home_page/header_description/index";
-  import FeatureSection from "../components/home_page/feature_section/index";
-  import DocumentSection from "../components/home_page/document_section/index";
+  import HeaderDescription from "../components/home_page/header_description/HeaderDescription";
+  import FeatureSection from "../components/home_page/feature_section/FeatureSection";
+  import DocumentSection from "../components/home_page/document_section/DocumentSection";
   export default {
     name:"HomePage",
     components: {DocumentSection, FeatureSection, HeaderDescription}

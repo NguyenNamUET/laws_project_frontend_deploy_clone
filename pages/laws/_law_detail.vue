@@ -1,5 +1,5 @@
 <template>
-  <el-container>
+  <el-container style="margin-top: 10px;">
     <el-aside width="200px">
     </el-aside>
 
@@ -229,15 +229,9 @@
         }
       },
       methods: {
-        getDetailLaw() {
-          let law = [];
-          for (law of this.laws) {
-            console.log(law);
-            if (law.id === this.slug.law_detail) {
-              this.result = law;
-              break;
-            }
-          }
+        async getDetailLaw() {
+          const law = await this.$axios.$get('http://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=32801&Keyword=')
+          console.log(law);
         }
       },
       created() {

@@ -13,10 +13,10 @@
 <script>
   import NewIssuedList from "./components/new_issued_list";
   import MosViewedList from "./components/most_viewed_list";
-  import ExprireList from "./components/exprire_list";
+  import ExpireList from "./components/expire_list";
   export default {
     name: "DocumentSection",
-    components: {ExprireList, MosViewedList, NewIssuedList}
+    components: {ExpireList, MosViewedList, NewIssuedList}
   }
 </script>
 

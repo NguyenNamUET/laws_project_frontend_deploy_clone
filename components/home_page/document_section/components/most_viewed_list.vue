@@ -14,7 +14,7 @@
 
 <script>
   export default {
-    name : "MosViewedList",
+    name : "MostViewedList",
     data(){
       return{
         new_document:[

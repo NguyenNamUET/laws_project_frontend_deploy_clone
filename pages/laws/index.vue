@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div>
+  <div class="container" >
+    <div style="border: 1px solid #DEDEDE; padding: 20px; background-color: #fbfbfb;">
       <div class="search_field">
         <el-input
           placeholder="Từ khóa tìm kiếm"
@@ -22,14 +22,6 @@
             :value="item.value">
             </el-option>
           </el-select>
-          <el-select v-model="doc_type" clearable placeholder="Loại văn bản">
-            <el-option
-              v-for="item in type_options"
-              :key="item"
-              :label="item"
-              :value="item">
-            </el-option>
-          </el-select>
           <el-select v-model="search_range" clearable placeholder="Phạm vi tìm kiếm">
             <el-option
               v-for="item in range_options"
@@ -48,67 +40,78 @@
         </el-select>
       </div>
     </div>
-    <el-divider content-position="left">Tìm thấy {{total}} kết quả</el-divider>
 
-    <div class="search_result">
-        <el-select style=" margin-bottom: 10px" v-model="per_page" placeholder="Số bản ghi hiển thị">
-          <el-option
-            v-for="item in per_page_options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value">
-          </el-option>
-        </el-select>
-      <div v-for="law in search_result">
-        <el-row>
-          <el-col style="background-color: #E4E7ED">
-            <nuxt-link v-bind:to="'/laws/' + law.id"><div><i class="el-icon-check"></i>{{law.name}}</div></nuxt-link>
-          </el-col>
-        </el-row>
-        <el-row
-          :gutter="20"
-          style="padding: 3px"
-        >
-          <el-col :span="8" style="width: 80%;">
-            <div>
-            {{law.description}}
-            </div>
-          </el-col>
-          <el-col :span="4" style="width: 20%; float:right">
-            <div>
-              Ban hành: {{law.issued_date}}
-              <br>
-              Hiệu lực:
-              <span v-if="law.is_over_due === 1">Hết hiệu lực</span>
-              <span v-if="law.is_over_due === 0">Còn hiệu lực</span>
-              <br>
-            </div>
-          </el-col>
-        </el-row>
-        <el-row>
-          <el-link type="primary"><i class="el-icon-document"></i>Toàn văn</el-link>
-          <el-link type="info"><i class="el-icon-setting"></i>Thuộc tính</el-link>
-          <el-link type="success"><i class="el-icon-data-analysis"></i>Lược đồ</el-link>
-          <el-link type="danger"><i class="el-icon-download"></i>Tải về</el-link>
-        </el-row>
-        <el-row
-          style="box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04); margin-top: 6px;"
-        >
-          <el-col>
-            <span>Từ khóa liên quan: Quyết định, Bộ giáo dục và Đào tạo</span>
-          </el-col>
-        </el-row>
-        <el-divider></el-divider>
-      </div>
-      <div style="float: right">
-        <el-pagination
-          background
-          layout="prev, pager, next"
-          :total="100"
-        >
-        </el-pagination>
-      </div>
-    </div>
+    <el-divider content-position="left">Tìm thấy {{total}} kết quả</el-divider>
+    <el-row gutter="10">
+      <el-col span="4" style="width: 25%">
+        <div class="result_selector" style="border: 1px solid #DEDEDE; padding: 10px;">
+          <el-select style=" margin-bottom: 10px" v-model="per_page" placeholder="Số bản ghi hiển thị">
+            <el-option
+              v-for="item in per_page_options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+          <el-checkbox-group v-model="type_options" >
+            <el-checkbox @change="checkboxchange" v-for="item in type_options" :label="item" style="display: block">
+            </el-checkbox>
+          </el-checkbox-group>
+        </div>
+      </el-col>
+      <el-col span=8 style="width: 75%">
+        <div class="search_result" style="border: 1px solid #DEDEDE; border-bottom: 0px;">
+          <div v-for="law in search_result" style="border-bottom: 1px solid #DEDEDE; padding: 10px">
+            <el-row>
+              <el-col style="border-radius: 10px; background-color: #E4E7ED">
+                <nuxt-link v-bind:to="'/laws/' + law.id"><div><i class="el-icon-check"></i><span>{{law.name}}</span></div></nuxt-link>
+              </el-col>
+            </el-row>
+            <el-row
+              :gutter="20"
+              style="padding: 3px"
+            >
+              <el-col :span="8" style="width: 75%;">
+                <div>
+                {{law.description}}
+                </div>
+              </el-col>
+              <el-col :span="4" style="width: 25%; float:right">
+                <div style="font-size:80%; color: gray;">
+                  <span>Ban hành: {{law.issued_date}}</span>
+                  <br>
+                  Hiệu lực:
+                  <span v-if="law.is_over_due === 1">Hết hiệu lực</span>
+                  <span v-if="law.is_over_due === 0">Còn hiệu lực</span>
+                  <br>
+                </div>
+              </el-col>
+            </el-row>
+            <el-row>
+              <el-link type="primary"><i class="el-icon-document"></i>Toàn văn</el-link>
+              <el-link type="info"><i class="el-icon-setting"></i>Thuộc tính</el-link>
+              <el-link type="success"><i class="el-icon-data-analysis"></i>Lược đồ</el-link>
+              <el-link type="danger"><i class="el-icon-download"></i>Tải về</el-link>
+            </el-row>
+            <el-row
+              style="margin-top: 6px;"
+            >
+              <el-col>
+                <span style="font-size:80%; color: gray; background-color: #e4c6c6; border-radius: 10px; padding: 3px;">Từ khóa liên quan: Quyết định, Bộ giáo dục và Đào tạo</span>
+              </el-col>
+            </el-row>
+          </div>
+          <div style="float: right; margin-top: 10px;">
+            <el-pagination
+              background
+              layout="prev, pager, next"
+              :total="100"
+            >
+            </el-pagination>
+          </div>
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -119,6 +122,7 @@
       components: {law_listing},
       data() {
         return {
+          checked: false,
           search_key: null,
           sort_by: null,
           sort_options: [
@@ -192,7 +196,13 @@
             },
           ]
         }
+      },
+      methods: {
+        checkboxchange(label) {
+          console.log(label);
+        }
       }
+
     }
 </script>
 
@@ -201,6 +211,7 @@
     clear: both;
     margin-left: 200px;
     margin-right: 200px;
+    margin-top: 20px;
 
   }
   .search_field {
