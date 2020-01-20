@@ -1,12 +1,10 @@
-const BACKEND_API = "localhost:5000"
+const BACKEND_API = "http://localhost:8000"
 
 
 const EXTRACTIVE_DOCUMENTS = {
-    TOP: BACKEND_API + '/books/top',
-    DETAIL: BACKEND_API + '/books/details',
-    RATINGS: BACKEND_API + '/books/ratings',
-    CATEGORIES: BACKEND_API + '/books/details/categories',
-    RATINGSTAT: BACKEND_API + '/books/ratings/stat'
+    UpComing: BACKEND_API + '/law/upcoming',
+    CurrentIssued: BACKEND_API + '/law/current',
+    ExtractiveDocuments: BACKEND_API + '/law'
 }
 
 export {

@@ -43,7 +43,7 @@
     methods:{
       handleHome(){
 
-        this.$router.push({name: 'home_page'})
+        this.$router.push({name: 'home'})
       }
     }
   }
