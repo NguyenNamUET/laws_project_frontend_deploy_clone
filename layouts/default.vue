@@ -18,7 +18,7 @@
             </el-submenu>
             <el-menu-item index="3" style="float:right"><span>Soạn thảo</span></el-menu-item>
             <el-menu-item index="4" style="float:right"><span><nuxt-link to="/laws">Tìm kiếm</nuxt-link></span></el-menu-item>
-            <el-menu-item index="5" style="float:right"><span><nuxt-link to="/">Trang chủ</nuxt-link></span></el-menu-item>
+            <el-menu-item index="5" style="float:right"><span><nuxt-link to="/home">Trang chủ</nuxt-link></span></el-menu-item>
           </el-menu>
       </el-col>
     </el-row>
@@ -42,7 +42,6 @@
   export default {
     methods:{
       handleHome(){
-
         this.$router.push({name: 'home'})
       }
     }

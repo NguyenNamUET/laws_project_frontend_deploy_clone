@@ -4,7 +4,7 @@
       <el-row class="_document_section_row" >
         <NewIssuedList></NewIssuedList>
         <MosViewedList></MosViewedList>
-        <ExprireList></ExprireList>
+        <ExpireList></ExpireList>
       </el-row>
     </el-col>
   </el-row>

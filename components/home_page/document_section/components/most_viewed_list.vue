@@ -1,7 +1,7 @@
 <template>
   <el-col :span="6" :offset="2" class="_document_section_item">
     <h3>Văn bản xem nhiều nhất</h3>
-    <el-row class="_document_item" v-for="item in documents">
+    <el-row class="_document_item" v-for="item in documents" v-bind:key="item.id">
       <el-col :span="1">
         <i class="el-icon-document" style="color:#048194"></i>
       </el-col>

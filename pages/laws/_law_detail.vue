@@ -45,7 +45,7 @@
 
           </div>
         </el-tab-pane>
-        <el-tab-pane label="Văn bản liên quan">Chưa có j</el-tab-pane>
+        <el-tab-pane label="Văn bản liên quan"></el-tab-pane>
       </el-tabs>
     </el-main>
 
