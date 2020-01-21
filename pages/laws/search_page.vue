@@ -116,10 +116,8 @@
 </template>
 
 <script>
-    import law_listing from "../../components/law_listing";
     export default {
-        name: "index",
-      components: {law_listing},
+      name: "search_page",
       data() {
         return {
           checked: false,
