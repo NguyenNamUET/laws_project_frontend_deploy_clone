@@ -1,6 +1,17 @@
+import axios from 'axios'
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
+  generate: {
+    routes () {
+      return axios.get('https://floating-river-10954.herokuapp.com/laws')
+        .then((res) => {
+          return res.data.map((law) => {
+            return '/laws/' + law.id
+          })
+        })
+    }
+  },
   /*
   ** Headers of the page
   */

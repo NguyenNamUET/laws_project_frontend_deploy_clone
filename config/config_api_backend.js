@@ -1,4 +1,4 @@
-const BACKEND_API = "http://localhost:8000"
+const BACKEND_API = "https://floating-river-10954.herokuapp.com/";
 
 
 const EXTRACTIVE_DOCUMENTS = {
