@@ -64,8 +64,8 @@
         }
       },
       async mounted() {
-        let detail = await GetDocumentDetail(this.$route.params.law_detail);
-        this.result = detail;
+        let doc_detail = await GetDocumentDetail(this.$route.params.law_detail);
+        this.result = doc_detail;
       },
     }
 </script>
