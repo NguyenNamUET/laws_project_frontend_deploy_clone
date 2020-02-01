@@ -54,7 +54,7 @@
             </el-option>
           </el-select>
           <el-checkbox-group v-model="checked_options" >
-            <el-checkbox @change="checkboxchange" v-for="item in type_options" :label="item" style="display: block">
+            <el-checkbox v-for="item in type_options" :label="item" style="display: block">
             </el-checkbox>
           </el-checkbox-group>
         </div>
