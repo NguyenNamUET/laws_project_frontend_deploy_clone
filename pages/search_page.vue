@@ -197,9 +197,6 @@
         }
       },
       methods: {
-        checkboxchange(label) {
-          console.log(label);
-        }
       }
 
     }
