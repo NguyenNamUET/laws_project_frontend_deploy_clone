@@ -14,10 +14,10 @@
           </span>
           <el-divider content-position="left"></el-divider>
           <div>
-            <el-row>
-              <el-col :span="5">Số hiệu</el-col>
-              <el-col :span="10">{{}}</el-col>
-            </el-row>
+<!--            <el-row>-->
+<!--              <el-col :span="5">Số hiệu</el-col>-->
+<!--              <el-col :span="10">{{}}</el-col>-->
+<!--            </el-row>-->
             <el-row>
               <el-col :span="5">Loại văn bản</el-col>
               <el-col :span="10">{{result.type}}</el-col>
@@ -34,10 +34,10 @@
               <el-col :span="5">Ngày có hiệu lực</el-col>
               <el-col :span="10">{{result.effective_date}}</el-col>
             </el-row>
-            <el-row>
-              <el-col :span="5">Lần cập nhật cuối</el-col>
-              <el-col :span="10">{{result.last_update_time}}</el-col>
-            </el-row>
+<!--            <el-row>-->
+<!--              <el-col :span="5">Lần cập nhật cuối</el-col>-->
+<!--              <el-col :span="10">{{result.last_update_time}}</el-col>-->
+<!--            </el-row>-->
             <el-row>
               <el-col :span="5">Người ký</el-col>
               <el-col :span="10">{{result.signer}}</el-col>
