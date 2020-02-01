@@ -1,4 +1,4 @@
-const BACKEND_API = "https://floating-river-10954.herokuapp.com";
+const BACKEND_API = "https://fathomless-lake-29352.herokuapp.com/";
 
 
 const EXTRACTIVE_DOCUMENTS = {

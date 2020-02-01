@@ -2,21 +2,21 @@ import axios from 'axios'
 
 export default {
   mode: 'universal',
-  // generate: {
-  //   routes () {
-  //     return axios.get('https://floating-river-10954.herokuapp.com/laws')
-  //       .then((res) => {
-  //         return res.data.map((law) => {
-  //           return '/laws/' + law.id
-  //         })
-  //       })
-  //   }
-  // },
-  generate:{
-    routes:[
-      '/laws/1',
-    ]
+  generate: {
+    routes () {
+      return axios.get('https://fathomless-lake-29352.herokuapp.com/laws')
+        .then((res) => {
+          return res.data.map((law) => {
+            return '/laws/' + law.id
+          })
+        })
+    }
   },
+  // generate:{
+  //   routes:[
+  //     '/laws/1',
+  //   ]
+  // },
   /*
   ** Headers of the page
   */
