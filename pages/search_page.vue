@@ -53,7 +53,7 @@
               :value="item.value">
             </el-option>
           </el-select>
-          <el-checkbox-group v-model="type_options" >
+          <el-checkbox-group v-model="checked_options" >
             <el-checkbox @change="checkboxchange" v-for="item in type_options" :label="item" style="display: block">
             </el-checkbox>
           </el-checkbox-group>
@@ -141,6 +141,7 @@
           type_options: [
             'Chỉ thị','Điều ước quốc tế','Hiến pháp','Lệnh','Luật','Nghị định','Nghị quyết','Pháp lệnh','Quyết định',
             'Sắc lệnh','Thông tư', 'Thông tư liên tịch', 'Văn bản hợp nhất', 'Văn bản khác', 'Văn bản WTO'],
+          checked_options: [],
           search_range: null,
           range_options: ['Toàn quốc','Hà Nội', 'TP Hồ Chí Minh', 'Sài Gòn'],
           key_option: null,
