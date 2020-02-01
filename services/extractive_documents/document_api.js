@@ -17,7 +17,7 @@ const Getupcomingeffectivedocument = async () => {
   try {
     let res = await axios.get(EXTRACTIVE_DOCUMENTS.ExtractiveDocuments);
     let upcoming_effective_docs = res.data.slice(0,5);
-    return upcoming_effective_docs.slice(0,5)
+    return upcoming_effective_docs
   } catch (e) {
     console.log(e);
     return null
@@ -27,8 +27,8 @@ const Getupcomingeffectivedocument = async () => {
 const Getexpireddocument = async () => {
   try {
     let res = await axios.get(EXTRACTIVE_DOCUMENTS.ExtractiveDocuments);
-    let expired_docs = res.data.slice(5,10)
-    return expired_docs.slice(0,5)
+    let expired_docs = res.data.slice(5,10);
+    return expired_docs
   } catch (e) {
     console.log(e);
     return null
